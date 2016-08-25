@@ -1,0 +1,11 @@
+body {
+  padding: 0;
+}
+
+/* Added by Paul Nebel */
+.no-scroll {
+  overflow: hidden; /*  Disable scrollbars */
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

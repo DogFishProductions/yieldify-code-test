@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+      .no-scroll {
+        overflow: hidden; /*  Disable scrollbars */
+      }
+    </style>
+    <!-- endbuild -->
+  </head>
+  <body ng-app="yieldifyCodeApp" class="no-scroll" ng-controller="MainCtrl as ctrl">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div style="position: absolute; top: 0px; left: 0px;">
+      <canvas id="canvasOne" width="500" height="500" class="ng-cloak">
+        Your browser does not support HTML5 Canvas.
+      </canvas>
+    </div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/services/utilitiesservice.js"></script>
+        <script src="scripts/services/domservice.js"></script>
+        <script src="scripts/services/ballsservice.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <!-- endbuild -->
+
+        <!-- This is a 3rd party script I have added -->
+        <script src="vendors/modernizr-custom.js"></script>
+</body>
+</html>
