@@ -11,4 +11,4 @@ DISPLAY=:99.0
 export DISPLAY
 echo $DISPLAY
 echo $BROWSER
-grunt test
+grunt karma

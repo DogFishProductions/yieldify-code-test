@@ -2,13 +2,12 @@ production:
  build: .
  ports:
   - "9000:9000"
- extra_hosts:
-  - "paulnebel.com:127.0.0.1"
  links:
   - nginx
  environment:
   - BROWSER=google-chrome
   - VIRTUAL_HOST=paulnebel.com
+  - VIRTUAL_PORT=9000
  command: sh ./shell/scripts/post-run-live.sh
 
 serve-dev:
@@ -18,18 +17,13 @@ serve-dev:
   - $PWD/..://home/dogfish/app
  ports:
   - "9000:9000"
- extra_hosts:
-  - "paulnebel.com:127.0.0.1"
- links:
-  - nginx
+  - "35729:35729"
  environment:
   - BROWSER=google-chrome
-  - VIRTUAL_HOST=paulnebel.com
  command: sh ./shell/scripts/post-run-dev.sh
 
 nginx:
  image: jwilder/nginx-proxy
- container_name: poc_nginx
  ports:
   - "80:80"
  volumes:
@@ -42,27 +36,20 @@ serve-dist:
   - $PWD/..://home/dogfish/app
  ports:
   - "9000:9000"
- extra_hosts:
-  - "paulnebel.com:127.0.0.1"
- links:
-  - nginx
  environment:
   - BROWSER=google-chrome
-  - VIRTUAL_HOST=paulnebel.com
  command: sh ./shell/scripts/post-run-live.sh
 
 test:
  build: .
  dockerfile: dev-Dockerfile
  volumes:
-  - .://home/redjam/app
+  - $PWD/..://home/dogfish/app
  ports:
   - "9000:9000"
- extra_hosts:
-  - "paulnebel.com:127.0.0.1"
- links:
-  - nginx
+  - "9001:9001"
+  - "8080:8080"
+  - "35729:35729"
  environment:
   - BROWSER=google-chrome
-  - VIRTUAL_HOST=paulnebel.com
  command: sh ./shell/scripts/post-run-test.sh

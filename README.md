@@ -10,7 +10,7 @@ When balls go out of play they are removed from the animation loop for performan
 
 The values for gravity, elasticity and friction are set to default values, as are the ball radius, minimum and maximum ball speed on firing and minimum and maximum ball angle on firing.  It is possible to override some or all of these values at startup in the app configuration section.  Elasticity is limited to a value of 1 (if the default is set to a higher value it will be overridden). The same is true of friction. Elasticity is set as a variable on a ball instance.  Currently, each ball instance has the same elasticity and radius but this allows for an extension of the functionality whereby different balls have different elasticities and radii.
 
-# yieldify-code
+# yieldify-code-test
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.15.1.
