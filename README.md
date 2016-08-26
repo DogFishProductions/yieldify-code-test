@@ -1,5 +1,8 @@
 # Yieldify Coding Test
 
+[![Build Status][travis-badge]][travis-url]
+[![Dependency Status][david-badge]][david-url]
+
 This app has been written using [AngularJS](https://angularjs.org/). It has all been written by me, [Paul Nebel](http://paulnebel.io) with the exception of the 3rd-party library [Modernizr](https://modernizr.com/) which has only been used to check the compatibility of the host browser with HTML5 Canvas. Angular was chosen as a framework to ensure good structure and extensibility even though it is something of a sledgehammer to crack a nut in this particular instance.
 
 As requested, whenever the user clicks on the page a circle is 'fired' from the clicked position at a random speed and angle. My solution handles multiple balls being fired and bouncing at the same time. When the projectile reaches the bottom of the browser window it bounces until it stops.
@@ -17,8 +20,20 @@ version 0.15.1.
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+Run `grunt` for building and `grunt serve` for preview.  Alternatively, to develop in docker, cd to `app/docker` and run `docker-compose up serve-dev`.  Then wait a long time (it takes ages to run `apt-get update` - I will be fixing this soon).  Livereload is working so you can develp in the container while editing files on your local disk.
+
+## Deployment
+If you were to deploy this then you'd cd to `app/docker` and run `docker-compose up production`.  I wouldn't recommend doing this - the container is not production ready, it's just there as an example.
 
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
+
+## License
+Copyright (c) 2016, Paul Nebel.
+Licensed under [MIT][].
+
+[travis-badge]: https://travis-ci.org/DogFishProductions/yieldify-code-test.svg
+[travis-url]: https://travis-ci.org/DogFishProductions/yieldify-code-test
+[david-badge]: https://david-dm.org/DogFishProductions/yieldify-code-test.svg
+[david-url]: https://david-dm.org/DogFishProductions/yieldify-code-test

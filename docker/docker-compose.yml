@@ -39,17 +39,3 @@ serve-dist:
  environment:
   - BROWSER=google-chrome
  command: sh ./shell/scripts/post-run-live.sh
-
-test:
- build: .
- dockerfile: dev-Dockerfile
- volumes:
-  - $PWD/..://home/dogfish/app
- ports:
-  - "9000:9000"
-  - "9001:9001"
-  - "8080:8080"
-  - "35729:35729"
- environment:
-  - BROWSER=google-chrome
- command: sh ./shell/scripts/post-run-test.sh
