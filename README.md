@@ -23,7 +23,7 @@ version 0.15.1.
 Run `grunt` for building and `grunt serve` for preview.  Alternatively, to develop in docker, cd to `app/docker` and run `docker-compose up serve-dev`.  Then wait a long time (it takes ages to run `apt-get update` - I will be fixing this soon).  Livereload is working so you can develp in the container while editing files on your local disk.
 
 ## Deployment
-If you were to deploy this then you'd cd to `app/docker` and run `docker-compose up production`.  I wouldn't recommend doing this - the container is not production ready, it's just there as an example.
+If you were to deploy this then you'd cd to `app/docker` and run `docker-compose up production`.  I wouldn't recommend doing this - the container is not production ready, it's just there as an example.  If you want to test deployment locally then add `127.0.0.1 paulnebel.com` to your `/etc/hosts` file in order to reach `nginx`.
 
 ## Testing
 

@@ -174,4 +174,16 @@ angular.module('yieldifyCodeApp')
       // draw the canvas
       drawCanvas();
     }
+  ])
+  .config(['BallsServiceProvider',
+    function(BallsServiceProvider) {
+      // If we wanted to supply configuration values from a file or from a database this would be the place to do it.
+      // This is why I've configured 'BallsService' as a provider - it allows us to set up configuration before the application loads.
+      // The configuration could be set by calling 'BallsServiceProvider.setConfig(config_object)'.
+      // I haven't included any means of creating a configuration file as this wasn't asked for in the test description,
+      // but by doing it this way I have allowed for extensiion.
+
+      // As an example, I'm overriding the default elasticity here...
+      BallsServiceProvider.setConfig({ elasticity: 0.8 });
+    }
   ]);
