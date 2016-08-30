@@ -183,7 +183,7 @@ angular.module('yieldifyCodeApp')
       // I haven't included any means of creating a configuration file as this wasn't asked for in the test description,
       // but by doing it this way I have allowed for extensiion.
 
-      // As an example, I'm overriding the default elasticity here...
-      BallsServiceProvider.setConfig({ elasticity: 0.8 });
+      // uncomment this to override the default elasticity...
+      // BallsServiceProvider.setConfig({ elasticity: 0.8 });
     }
   ]);
